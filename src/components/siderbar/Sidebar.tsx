@@ -73,6 +73,13 @@ const Sidebar: React.FC = () => {
     chrome.runtime.sendMessage({ type: 'SIDEBAR_OPENED' }, () => {
       console.log('Sidebar.tsx: Sent SIDEBAR_OPENED');
       // Check recording state when sidebar opens
+      
+      //leave
+      chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+  const tabId = tabs[0].id!;
+  chrome.tabs.sendMessage(tabId, { type: "ACTIVATE_MICROPHONE" });
+});
+//leave
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         if (tabs[0] && tabs[0].url) {
           const currentUrl = tabs[0].url;

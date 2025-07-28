@@ -89,9 +89,9 @@
         "https://teams.live.com/v2/*"
       ],
       "js": [
-        "content/script.js"
+        "src/content/script.js"
       ],
-      "run_at": "document_end"
+      "run_at": "document_idle"
     }
   ],
   "web_accessible_resources": [

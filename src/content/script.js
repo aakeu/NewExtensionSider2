@@ -680,5 +680,27 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
       closedOverlays.add(window.location.href);
       break;
   }
+
+  chrome.runtime.onMessage.addListener((msg, sender) => {
+  if (msg.type === "ACTIVATE_MICROPHONE") {
+    activateMicrophoneOnPage();
+  }
+});
+
+(async function requestMicFromPage() {
+  try {
+    console.log("ContentScript: requesting mic access…");
+    // This runs as if it were the page itself → will reuse the page’s permission
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    console.log("ContentScript: mic access granted");
+    // If your background/sidepanel needs to know, send a simple flag:
+    chrome.runtime.sendMessage({ action: "MIC_GRANTED" });
+  } catch (err) {
+    console.error("ContentScript: mic access failed", err);
+  }
+})();
+
+
+
   return true; // Keep the message channel open for async responses
 });

@@ -60,6 +60,17 @@ chrome.runtime.onMessage.addListener((request, sender) => {
   }
 })
 
+//Leave
+chrome.runtime.onMessage.addListener((msg) => {
+  if (msg.type === "MICROPHONE_ACTIVATED") {
+     console.log("Background: page‑level mic permission is active");
+    // e.g. enable your “Record” button in the sidebar
+  }
+});
+// /leave
+
+
+
 
 // let sideBarIsOpen = 0
 
