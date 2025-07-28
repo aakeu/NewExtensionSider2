@@ -1,0 +1,71 @@
+#meeting-recorder-overlay,
+#instruction-overlay,
+#warning-overlay  {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-family: Poppins, Arial, sans-serif;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.overlay-content p {
+  font-size: small;
+  font-weight: 700;
+}
+
+.overlay-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.overlay-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #034aa6;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+#summary-yes {
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  color: white;
+  font-weight: 600;
+}
+
+#summary-yes:hover {
+  background: linear-gradient(180deg, #034aa6 0%, #00ccff 100%);
+}
+
+#summary-no {
+  background-color: red;
+  color: white;
+  font-weight: 600;
+}
+
+#summary-no:hover {
+  background-color: #da190b;
+}
+
+.meeting-overlay-logo {
+  width: 160px;
+  height: 100px;
+}

@@ -1,0 +1,73 @@
+.consent-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(70vw, 400px);
+  max-height: 300px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 999999;
+  font-family: Arial, sans-serif;
+  animation: contentModalSlideIn 0.6s ease-in-out;
+  scrollbar-width: none;
+}
+
+.overlay-content {
+  text-align: center;
+  padding: 10px;
+}
+
+.overlay-content p {
+  margin: 0 0 15px;
+  font-size: 16px;
+}
+
+.overlay-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.overlay-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: blue;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.overlay-buttons button:first-child {
+  background: linear-gradient(180deg, #00ccff 0%, #034aa6 100%);
+  color: white;
+}
+
+.overlay-buttons button:first-child:hover {
+  background: linear-gradient(180deg, #034aa6 0%, #00ccff 100%);
+}
+
+.overlay-buttons button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.overlay-buttons button:last-child:hover {
+  background-color: #da190b;
+}
+
+@keyframes contentModalSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
